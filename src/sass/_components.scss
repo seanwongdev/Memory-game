@@ -1,3 +1,47 @@
 .container {
-  height: 500px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cards-container {
+  height: 1000px;
+  width: 640px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+  perspective: 1000px;
+}
+
+.card {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+
+  &:active {
+    transform: scale(0.95);
+    transition: transform 0.2s;
+  }
+
+  img {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: white;
+    border-radius: 8px;
+    backface-visibility: hidden;
+  }
+}
+
+.card.flip {
+  transform: rotateY(180deg);
+}
+
+.front-facing {
+  transform: rotateY(180deg);
 }

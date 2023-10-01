@@ -1,1 +1,11 @@
-/*# sourceMappingURL=main.css.map */
+.container {
+  height: 500px;
+}
+
+.card {
+  display: flex;
+}
+
+.card img {
+  font-size: 30px;
+}
