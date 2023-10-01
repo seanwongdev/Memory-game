@@ -5,11 +5,15 @@ class CardView {
     this._parentElement.addEventListener("click", function (e) {
       const card = e.target.closest(".card");
       if (!card) return;
-      card.classList.toggle("flip");
+
       console.log(card);
 
-      handler();
+      handler(card);
     });
+  }
+
+  flipCard(card) {
+    card.classList.toggle("flip");
   }
 }
 
