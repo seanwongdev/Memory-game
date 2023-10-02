@@ -36,7 +36,7 @@ class CardView {
   _generateCards() {
     return this._data
       .map(
-        (card) => `<div class="card" data-value=${card.src}>
+        (card) => `<div class="card" data-value=${card.src} data-id=${card.id}>
     <img class="front-facing" src=${card.src} alt="" />
     <img class="back-facing" src="src/img/star.svg" alt="star" />
   </div>`

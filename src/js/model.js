@@ -14,9 +14,9 @@ export const state = {
 };
 
 export const shuffleCards = function () {
-  const shuffledCards = [...state.images, ...state.images].sort(
-    () => Math.random - 0.5
-  );
+  const shuffledCards = [...state.images, ...state.images]
+    .sort(() => Math.random() - 0.5)
+    .map((card) => ({ ...card, id: Math.random() }));
   state.cards = shuffledCards;
 };
 
