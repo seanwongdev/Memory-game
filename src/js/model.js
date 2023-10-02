@@ -2,14 +2,14 @@ export const state = {
   cards: [],
   flippedCards: [],
   images: [
-    { src: "src/img/assassin.svg" },
-    { src: "src/img/cupid.svg" },
-    { src: "src/img/gangster.svg" },
-    { src: "src/img/knight.svg" },
-    { src: "src/img/ninja.svg" },
-    { src: "src/img/soldier.svg" },
-    { src: "src/img/spartan.svg" },
-    { src: "src/img/wrestler.svg" },
+    { src: "/assassin.6ba9f1dc.svg" },
+    { src: "/cupid.cabbef52.svg" },
+    { src: "/gangster.e294485b.svg" },
+    { src: "/knight.2e44a6b9.svg" },
+    { src: "/ninja.c91d846a.svg" },
+    { src: "/soldier.2fc21535.svg" },
+    { src: "/spartan.28924a58.svg" },
+    { src: "/wrestler.3f03b2f2.svg" },
   ],
 };
 
@@ -32,6 +32,10 @@ const unflipCards = function () {
 
 export const checkMatching = function () {
   if (state.flippedCards.length === 2) {
+    if (state.flippedCards[0].dataset.id === state.flippedCards[1].dataset.id) {
+      state.flippedCards.splice(1, state.flippedCards.length);
+    }
+
     if (
       state.flippedCards[0].dataset.value !==
       state.flippedCards[1].dataset.value

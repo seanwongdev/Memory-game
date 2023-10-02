@@ -41,7 +41,7 @@ class CardView {
           card.src.length - 4
         )} data-id=${card.id}>
     <img class="front-facing" src=${card.src} alt="" />
-    <img class="back-facing" src="src/img/star.svg" alt="star" />
+    <img class="back-facing" src="/star.e91b27c9.svg" alt="star" />
   </div>`
       )
       .join("");

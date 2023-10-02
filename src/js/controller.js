@@ -21,6 +21,7 @@ const controlFlipCard = function (card) {
 };
 
 const init = function () {
+  controlShuffle();
   cardView.addHandlerReset(controlShuffle);
   if (model.state.flippedCards.length < 2) {
     cardView.addHandlerFlip(controlFlipCard);
