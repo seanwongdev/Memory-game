@@ -11,6 +11,7 @@ export const state = {
     { src: "/spartan.28924a58.svg" },
     { src: "/wrestler.3f03b2f2.svg" },
   ],
+  matchedCards: [],
 };
 
 export const shuffleCards = function () {
@@ -31,6 +32,13 @@ const unflipCards = function () {
 };
 
 export const checkMatching = function () {
+  if (state.matchedCards.includes(state.flippedCards[1])) {
+    state.flippedCards.splice(1, 1);
+  }
+
+  if (state.matchedCards.includes(state.flippedCards[0])) {
+    state.flippedCards.splice(0, 1);
+  }
   if (state.flippedCards.length === 2) {
     if (state.flippedCards[0].dataset.id === state.flippedCards[1].dataset.id) {
       state.flippedCards.splice(1, state.flippedCards.length);
@@ -43,6 +51,9 @@ export const checkMatching = function () {
       setTimeout(() => {
         unflipCards();
       }, 1500);
+    } else {
+      state.matchedCards = [...state.matchedCards, ...state.flippedCards];
+      console.log(state.matchedCards);
     }
     setTimeout(() => {
       state.flippedCards.splice(0, state.flippedCards.length);
